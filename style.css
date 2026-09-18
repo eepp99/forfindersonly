@@ -22,3 +22,18 @@ header.brand-header{display:flex;justify-content:space-between;align-items:cente
 /* Signature brand statement. */
 .brand-statement{margin:25px 0 85px;padding:90px 6% 100px;background:#851039;color:#fcecf2;display:flex;align-items:center;justify-content:center;gap:65px;overflow:hidden}.brand-statement h2{color:inherit;font-family:Georgia,'Times New Roman',serif;font-size:clamp(52px,9.5vw,145px);font-weight:400;line-height:1.03;letter-spacing:-.055em;margin:0}.brand-statement h2 span{display:block}.brand-statement h2 em{color:#f0b6cf}.key-emblem{width:clamp(65px,10vw,145px);height:auto;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;transform:rotate(-22deg)}@media(max-width:600px){.brand-statement{padding:65px 7%;gap:25px;margin:10px 0 50px}.brand-statement h2{font-size:clamp(35px,9vw,54px)}.key-emblem{width:52px}}@media(max-width:350px){.brand-statement{gap:15px}.key-emblem{width:40px}}
 .drink-item{text-align:center;min-width:0}.drink-item .card{display:block;width:100%;padding-bottom:17px}.drink-shop{display:inline-flex;align-items:center;justify-content:center;padding:11px 23px;background:var(--wine);color:white;border-radius:5px;font-size:14px;font-weight:500;min-height:44px}.drink-shop:hover{background:#561c30}#detail-shop{margin-top:22px}.next-drink{margin:22px 0 0 12px;background:#f3ecef;color:var(--wine)}.hero-copy>p:not(.eyebrow){max-width:650px;margin-left:auto;margin-right:auto}@media(max-width:520px){.contact-links{gap:15px}.contact-links a{width:53px;height:53px;padding:13px}.drink-shop{font-size:13px;padding:11px 20px}.next-drink{margin-left:8px}}
+
+/* Chilled glass: soft edge frost and fine condensation, with clear product space. */
+.frost-scene{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.frost-scene::before,.frost-scene::after{content:'';position:absolute;inset:-3%;pointer-events:none}
+.frost-scene::before{background:radial-gradient(ellipse at 0 35%,#e5f8ff30,transparent 30%),radial-gradient(ellipse at 100% 65%,#d3efff29,transparent 28%),linear-gradient(0deg,#e9f9ff20,transparent 17%);filter:blur(18px);animation:cold-breath 14s ease-in-out infinite alternate}
+.frost-scene::after{opacity:.22;background-image:radial-gradient(#effbff70 .5px,transparent .8px);background-size:5px 7px;mask-image:linear-gradient(90deg,#000,transparent 19%,transparent 81%,#000)}
+.condensation{position:absolute;left:var(--x);top:var(--y);width:var(--size);height:calc(var(--size) * 1.25);border-radius:48% 48% 45% 45%;border:1px solid #eafaff38;background:radial-gradient(ellipse at 28% 22%,#ffffff80,transparent 45%),linear-gradient(145deg,#e1f5ff16,#420a2b20);box-shadow:inset -1px -1px 2px #f2fbff32,0 2px 2px #29091e25;animation:dew-glint 9s ease-in-out var(--delay) infinite alternate}
+@keyframes cold-breath{from{opacity:.5;transform:translateY(0)}to{opacity:.95;transform:translateY(-12px)}}
+@keyframes dew-glint{from{opacity:.35}to{opacity:.8}}
+.brand-statement{position:relative;isolation:isolate;min-height:540px;padding:130px 5%;gap:clamp(30px,5vw,80px)}
+.brand-statement::before{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 0 100%,#d8efff1a,transparent 48%),radial-gradient(ellipse at 100% 0,#e8faff12,transparent 45%);pointer-events:none}
+.brand-statement h2{font-size:clamp(58px,10.5vw,166px)}
+.brand-statement .key-emblem{width:clamp(70px,11vw,155px)}
+@media(max-width:600px){.brand-statement{min-height:330px;padding:95px 6%;gap:22px}.brand-statement h2{font-size:clamp(34px,10vw,60px)}.brand-statement .key-emblem{width:54px}.condensation{opacity:.4}.frost-scene::before{opacity:.65}}
+@media(prefers-reduced-motion:reduce){.frost-scene::before,.condensation{animation:none}}

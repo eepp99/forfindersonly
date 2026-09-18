@@ -21,10 +21,10 @@ const ingredientSection=document.createElement('section');
 ingredientSection.className='ingredients';
 ingredientSection.innerHTML='<h3>Ingredients</h3><ul id="detail-ingredients"></ul>';
 document.querySelector('.facts').before(ingredientSection);
-const iceLayer=document.createElement('div');
-iceLayer.className='ice-scene';iceLayer.setAttribute('aria-hidden','true');
-iceLayer.innerHTML=Array.from({length:4},(_,i)=>`<img class="ice ice-${i+1}" src="assets/ice.png" alt="" width="1024" height="1024">`).join('');
-document.querySelector('.hero').prepend(iceLayer);
+const frostLayer=document.createElement('div');
+frostLayer.className='frost-scene';frostLayer.setAttribute('aria-hidden','true');
+frostLayer.innerHTML=Array.from({length:30},(_,i)=>`<span class="condensation" style="--x:${i%2===0?2+(i*7)%13:85+(i*7)%13}%;--y:${8+(i*19)%86}%;--size:${3+(i*3)%7}px;--delay:-${i%13}s"></span>`).join('');
+document.querySelector('.hero').prepend(frostLayer);
 const cards=document.querySelector('#cards');
 drinks.forEach((d,i)=>{
  const item=document.createElement('article');item.className='drink-item';
