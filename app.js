@@ -55,3 +55,10 @@ function openDrink(i){
 document.querySelector('.close').onclick=()=>dialog.close();dialog.addEventListener('close',()=>document.body.style.overflow='');dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});document.querySelector('.next-drink').onclick=()=>openDrink((current+1)%drinks.length);
 document.querySelector('#year').textContent=new Date().getFullYear();
 
+const storyObserver=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){entry.target.classList.add('story-visible');storyObserver.unobserve(entry.target)}
+ });
+},{threshold:.22,rootMargin:'0px 0px -8%'});
+document.querySelectorAll('.drink-item').forEach(item=>storyObserver.observe(item));
+

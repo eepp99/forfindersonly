@@ -89,3 +89,28 @@ footer{background:var(--brand-paper)}
 @media(max-width:800px){.section-head{min-height:300px;padding:70px 7vw 60px;display:block}.section-head h2{font-size:clamp(58px,16vw,100px)}.section-head>p{margin-top:34px}.drink-item{grid-template-columns:1fr;min-height:0}.drink-item:nth-child(even) .card,.drink-item:nth-child(even) .story-info{order:initial}.card{min-height:580px;padding:65px 5% 45px}.bottle{width:clamp(175px,46vw,250px)}.story-info,.drink-item:nth-child(even) .story-info{padding:62px 8vw 72px;border:0;border-top:1px solid currentColor}.story-info h3{font-size:clamp(52px,15vw,82px)}.story-description{font-size:16px}.hero::after{width:16px}}
 @media(max-width:480px){.hero{min-height:auto}.card{min-height:490px}.story-number{top:25px;left:24px}.view-hint{right:24px;bottom:22px}.story-info{padding:52px 7vw 62px}.story-kicker{margin-bottom:24px}.story-info h3{margin-bottom:18px}.story-description{line-height:1.65;margin-bottom:32px}}
 @media(prefers-reduced-motion:reduce){.card:hover .bottle{transform:none}}
+
+/* Looser product rhythm, crisp centred artwork and scroll-led bottle reveals. */
+.header-wordmark{font-family:'DM Sans',Arial,sans-serif;font-size:14px!important;font-weight:600!important;line-height:1!important;letter-spacing:.16em!important;text-transform:uppercase;padding:12px 0!important;color:#fff!important}
+.opening-wordmark{white-space:nowrap;font-family:'DM Sans',Arial,sans-serif;font-size:clamp(24px,4vw,52px);font-weight:500;letter-spacing:.18em;line-height:1;text-align:center;animation:opening-type 1s cubic-bezier(.16,1,.3,1) both}
+.opening-wordmark span{position:absolute;font-size:9px;margin:0 0 0 5px;letter-spacing:0}
+.opening-line{width:min(390px,62vw);transform-origin:center;animation:opening-rule 1.05s cubic-bezier(.16,1,.3,1) .08s both}
+.opening{animation:opening-away .9s cubic-bezier(.76,0,.24,1) 1.05s both}
+@keyframes opening-type{from{opacity:0;letter-spacing:.42em;transform:translateY(18px)}to{opacity:1;letter-spacing:.18em;transform:none}}
+@keyframes opening-rule{from{opacity:0;transform:scaleX(0)}to{opacity:.8;transform:scaleX(1)}}
+.drink-item{--roll-x:-105px;--roll-angle:-10deg;--story-shift:18px}
+.drink-item:nth-child(even){--roll-x:105px;--roll-angle:10deg;--story-shift:-18px}
+.drink-item .card{isolation:isolate}
+.drink-item .card::before{inset:7% 8% 9%;transform:rotate(-.45deg) translate(-5px,4px)}
+.drink-item:nth-child(even) .card::before{transform:rotate(.55deg) translate(6px,-3px)}
+.drink-item .bottle{align-self:center;justify-self:center;margin:auto;opacity:0;filter:none!important;background-repeat:no-repeat;background-color:transparent;image-rendering:auto;backface-visibility:hidden;transform-origin:50% 82%;will-change:transform,opacity}
+.drink-item.story-visible .bottle{animation:bottle-roll-in 1.15s cubic-bezier(.16,1,.3,1) .08s forwards}
+.drink-item .story-info{transform:translateY(var(--story-shift))}
+.drink-item:nth-child(3n) .story-info{transform:translateY(calc(var(--story-shift) * -.55))}
+.drink-item.story-visible .story-info{animation:story-drift-in .85s ease-out .16s both}
+.drink-item.story-visible .card:hover .bottle{animation:bottle-wobble .62s ease-in-out forwards}
+@keyframes bottle-roll-in{0%{opacity:0;transform:translate3d(var(--roll-x),70px,0) rotate(var(--roll-angle)) scale(.9)}72%{opacity:1;transform:translate3d(12px,-4px,0) rotate(1.4deg) scale(1.01)}100%{opacity:1;transform:none}}
+@keyframes bottle-wobble{0%,100%{transform:rotate(0)}25%{transform:rotate(-1.5deg) translateX(-3px)}65%{transform:rotate(1.2deg) translateX(3px)}}
+@keyframes story-drift-in{from{opacity:0;transform:translateY(calc(var(--story-shift) + 30px))}to{opacity:1;transform:translateY(var(--story-shift))}}
+@media(max-width:800px){.drink-item{--roll-x:-55px;--roll-angle:-7deg}.drink-item:nth-child(even){--roll-x:55px;--roll-angle:7deg}.drink-item .story-info,.drink-item:nth-child(3n) .story-info{transform:none}.drink-item.story-visible .story-info{animation:story-mobile-in .75s ease-out .1s both}@keyframes story-mobile-in{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}}
+@media(prefers-reduced-motion:reduce){.opening-wordmark,.opening-line,.drink-item.story-visible .bottle,.drink-item.story-visible .story-info,.drink-item.story-visible .card:hover .bottle{animation:none!important;opacity:1;transform:none;will-change:auto}}
