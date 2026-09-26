@@ -149,3 +149,28 @@ footer{background:var(--brand-paper)}
 .brand-statement h2 span{display:inline}
 .brand-statement h2 em{color:inherit;font-style:normal;font-weight:inherit}
 @media(max-width:600px){.brand-statement{min-height:250px;padding:48px 4% 54px;gap:16px}.brand-statement .key-emblem{width:32px}.brand-statement h2{font-size:clamp(31px,9.2vw,48px);letter-spacing:-.055em}}
+
+/* Quieter collection cue, aligned with the product lineup. */
+.hero .text-link{display:flex;width:max-content;margin:26px 0 0 max(7%,calc((100% - 1050px)/2));padding:7px 0;background:transparent;color:#f1c7d6;border-bottom:1px solid #ffffff66!important;border-radius:0;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.hero .text-link:hover{background:transparent;color:#fff;border-color:#fff!important}
+@media(max-width:600px){
+  .hero .text-link{margin:22px 0 0 7%;padding:6px 0;font-size:10px;color:#edbfd0;border-color:#ffffff4d!important}
+  .brand-statement{min-height:100svh;padding:72px 5%;justify-content:center}
+}
+
+/* Final mobile balance: centered soft cue and a generous, shorter signature panel. */
+.hero .text-link{position:relative;margin:26px auto 0;padding:7px 3px 13px;border:0!important}
+.hero .text-link::after{content:'';position:absolute;left:0;right:0;bottom:2px;height:8px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 9' preserveAspectRatio='none'%3E%3Cpath d='M2 6 C28 1 48 8 75 5 S125 2 158 6' fill='none' stroke='%23f2bfd1' stroke-width='1.2' stroke-linecap='round' opacity='.65'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.hero .text-link:hover{border:0!important}
+@media(max-width:600px){
+  .hero .text-link{margin:21px auto 0;padding:6px 3px 12px}
+  .brand-statement{min-height:clamp(460px,68svh,590px);padding:62px 5%;gap:18px}
+  .brand-statement .key-emblem{width:30px}
+  .brand-statement h2{font-size:clamp(29px,8.8vw,45px)}
+}
+
+/* Compact inverted hero button. */
+.hero .text-link{margin:24px auto 0;padding:9px 15px;border:1px solid #f1bfd1!important;border-radius:3px;background:transparent;color:#f4d5e0;font-size:10px;line-height:1.2;letter-spacing:.07em}
+.hero .text-link::after{display:none}
+.hero .text-link:hover{border:1px solid #fff!important;background:#fbe7ee;color:#711031}
+@media(max-width:600px){.hero .text-link{margin:20px auto 0;padding:8px 13px;font-size:9px}}
