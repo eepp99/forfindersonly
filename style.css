@@ -95,3 +95,57 @@ footer{background:var(--brand-paper)}
 .drink-item .bottle{align-self:center;justify-self:center;margin:auto;opacity:1;filter:none!important;background-repeat:no-repeat;background-color:transparent;image-rendering:auto;transform:none!important;animation:none!important;transition:none!important}
 .drink-item .story-info{transform:none!important;animation:none!important;opacity:1}
 .drink-item .card::before{transform:none}
+
+/* Focused hero and compact mobile collection. */
+.hero-copy h1{max-width:1120px;margin-inline:auto;font-size:clamp(42px,5.4vw,76px)}
+.hero-copy h1 em{display:inline-block;max-width:980px;margin-top:8px;font-size:.54em;line-height:1.25;letter-spacing:-.035em}
+.header-wordmark sup,.opening-wordmark span{display:inline-flex;align-items:center;justify-content:center;border:1px solid currentColor;border-radius:50%;font-family:'DM Sans',Arial,sans-serif;font-weight:700;letter-spacing:-.08em}
+.header-wordmark sup{width:16px;height:16px;font-size:5px;margin-left:5px;vertical-align:3px}
+.opening-wordmark span{width:25px;height:25px;font-size:8px;margin-left:7px;vertical-align:12px}
+@media(max-width:800px){
+  .hero{padding:34px 5% 24px;min-height:auto}
+  .hero-copy h1{font-size:clamp(36px,10vw,54px);line-height:1.02;letter-spacing:-.05em}
+  .hero-copy h1 em{font-size:.48em;line-height:1.3;margin-top:12px;letter-spacing:-.02em}
+  .hero .text-link{margin-top:22px}
+  .hero-art{margin:25px auto 0;max-width:680px}
+  .section-head{min-height:0;padding:54px 6vw 46px}
+  .section-head h2{font-size:clamp(48px,13vw,72px)}
+  .section-head>p{margin-top:24px}
+  .drink-item{grid-template-columns:minmax(140px,42%) 1fr;min-height:390px}
+  .drink-item:nth-child(even) .card{order:2}
+  .drink-item:nth-child(even) .story-info{order:1}
+  .card{min-height:390px;padding:34px 4%}
+  .card::before{inset:18px}
+  .bottle{width:clamp(105px,30vw,165px);max-width:88%}
+  .story-info,.drink-item:nth-child(even) .story-info{padding:42px 6vw;border-top:0}
+  .story-info{border-left:1px solid currentColor}
+  .drink-item:nth-child(even) .story-info{border-right:1px solid currentColor;border-left:0}
+  .story-kicker{margin-bottom:18px;font-size:9px}
+  .story-info h3{font-size:clamp(34px,8vw,55px);margin-bottom:14px}
+  .story-profile{font-size:12px;margin-bottom:18px}
+  .story-description{font-size:14px;line-height:1.55;margin-bottom:24px}
+  .drink-shop{min-height:42px;padding:11px 16px;font-size:10px}
+}
+@media(max-width:480px){
+  header.brand-header{min-height:70px;padding-block:12px}
+  .header-wordmark{font-size:11px!important;letter-spacing:.12em!important}
+  .hero-art{margin-inline:-2%}
+  .hero-details{margin-top:6px}
+  .drink-item{grid-template-columns:39% 61%;min-height:340px}
+  .card{min-height:340px;padding:25px 2%}
+  .card::before{inset:12px}
+  .bottle{width:min(120px,88%)}
+  .story-info,.drink-item:nth-child(even) .story-info{padding:30px 20px}
+  .story-info h3{font-size:clamp(30px,9vw,43px)}
+  .story-description{font-size:12px;line-height:1.5;margin-bottom:20px}
+  .story-profile{font-size:11px}
+  .brand-statement{min-height:250px;padding-block:65px}
+}
+
+/* Reference-inspired key signature. */
+.brand-statement{min-height:360px;padding:64px 5% 72px;flex-direction:column;gap:22px;background:var(--brand-paper);color:var(--brand-red);border-top:1px solid #292326;border-bottom:1px solid #292326}
+.brand-statement .key-emblem{width:44px;transform:none;stroke-width:4}
+.brand-statement h2{font-family:'DM Sans',Arial,sans-serif;font-size:clamp(54px,8.2vw,126px);font-weight:300;line-height:.92;letter-spacing:-.065em;text-align:center;white-space:nowrap}
+.brand-statement h2 span{display:inline}
+.brand-statement h2 em{color:inherit;font-style:normal;font-weight:inherit}
+@media(max-width:600px){.brand-statement{min-height:250px;padding:48px 4% 54px;gap:16px}.brand-statement .key-emblem{width:32px}.brand-statement h2{font-size:clamp(31px,9.2vw,48px);letter-spacing:-.055em}}
