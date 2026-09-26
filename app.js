@@ -32,9 +32,12 @@ const cards=document.querySelector('#cards');
 drinks.forEach((d,i)=>{
  const item=document.createElement('article');item.className='drink-item';
  const b=document.createElement('button');b.className='card';b.style.setProperty('--pos',positions[i]+'%');b.setAttribute('aria-label','View '+d.short+' details');
- b.innerHTML=`<div class="bottle" aria-hidden="true"></div><h3>${d.short}</h3><p>${d.profile}</p>`;b.addEventListener('click',()=>openDrink(i));
- const buy=document.createElement('a');buy.className='drink-shop';buy.href=productUrl(i);buy.target='_blank';buy.rel='noopener noreferrer';buy.textContent='Shop now';buy.setAttribute('aria-label','Shop '+d.short+' on Paystack');
- item.append(b,buy);cards.append(item);
+ b.innerHTML='<div class="bottle" aria-hidden="true"></div>';b.addEventListener('click',()=>openDrink(i));
+ const info=document.createElement('div');info.className='story-info';
+ const description=d.copy.split('. ').slice(1).join('. ');
+ info.innerHTML=`<p class="story-kicker">Spiked iced tea · 7.5% alc.</p><h3>${d.short}</h3><p class="story-profile">${d.profile}</p><p class="story-description">${description}</p>`;
+ const buy=document.createElement('a');buy.className='drink-shop';buy.href=productUrl(i);buy.target='_blank';buy.rel='noopener noreferrer';buy.textContent='Shop this blend';buy.setAttribute('aria-label','Shop '+d.short+' on Paystack');
+ info.append(buy);item.append(b,info);cards.append(item);
 });
 const dialog=document.querySelector('dialog');let current=0;
 function openDrink(i){
