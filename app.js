@@ -32,7 +32,7 @@ const cards=document.querySelector('#cards');
 drinks.forEach((d,i)=>{
  const item=document.createElement('article');item.className='drink-item';
  const b=document.createElement('button');b.className='card';b.style.setProperty('--pos',positions[i]+'%');b.setAttribute('aria-label','View '+d.short+' details');
- b.innerHTML='<div class="bottle" aria-hidden="true"></div>';b.addEventListener('click',()=>openDrink(i));
+ b.innerHTML='<span class="drink-info-cue" aria-hidden="true"><span>i</span></span><div class="bottle" aria-hidden="true"></div>';b.addEventListener('click',()=>openDrink(i));
  const info=document.createElement('div');info.className='story-info';
  const description=d.copy.split('. ').slice(1).join('. ');
  info.innerHTML=`<p class="story-kicker">Spiked iced tea · 7.5% alc.</p><h3>${d.short}</h3><p class="story-profile">${d.profile}</p><p class="story-description">${description}</p>`;

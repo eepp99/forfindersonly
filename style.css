@@ -174,3 +174,9 @@ footer{background:var(--brand-paper)}
 .hero .text-link::after{display:none}
 .hero .text-link:hover{border:1px solid #fff!important;background:#fbe7ee;color:#711031}
 @media(max-width:600px){.hero .text-link{margin:20px auto 0;padding:8px 13px;font-size:9px}}
+
+/* Visible cue that each product opens its flavour details. */
+.drink-info-cue{position:absolute;z-index:2;top:30px;right:32px;width:34px;height:34px;display:grid;place-items:center;border:1px solid currentColor;border-radius:50%;opacity:.72;transition:opacity .2s,transform .2s}
+.drink-info-cue span{font-family:Georgia,'Times New Roman',serif;font-size:17px;font-style:italic;line-height:1;transform:translateY(-1px)}
+.card:hover .drink-info-cue{opacity:1;transform:scale(1.06)}
+@media(max-width:800px){.drink-info-cue{top:18px;right:18px;width:30px;height:30px}.drink-info-cue span{font-size:15px}}
