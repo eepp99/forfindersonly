@@ -180,3 +180,31 @@ footer{background:var(--brand-paper)}
 .drink-info-cue span{font-family:Georgia,'Times New Roman',serif;font-size:17px;font-style:italic;line-height:1;transform:translateY(-1px)}
 .card:hover .drink-info-cue{opacity:1;transform:scale(1.06)}
 @media(max-width:800px){.drink-info-cue{top:18px;right:18px;width:30px;height:30px}.drink-info-cue span{font-size:15px}}
+/* Campaign identity — crisp, repeating tea / cocktail / key wallpaper. */
+:root{--brand-red:#ba0750;--brand-green:#198367;--wine:#a90946}
+header.brand-header,.hero{background-color:var(--brand-red);background-image:url('assets/finders-pattern.svg');background-size:200px 180px}
+.hero::after{display:none}.hero .frost-scene{opacity:.28}
+.drink-item:nth-child(n){background-color:var(--brand-red);color:#fff8ed;background-image:url('assets/finders-pattern.svg');background-size:200px 180px}
+.drink-item:nth-child(even){background-color:var(--brand-green)}
+.drink-item .card{background:transparent;isolation:isolate}
+.drink-item .card::before{inset:17% 9%;border:0;opacity:1;background:var(--brand-green);z-index:-1;border-radius:44% 50% 43% 49%;clip-path:polygon(50% 0%,61% 5%,73% 3%,81% 13%,93% 18%,94% 31%,100% 42%,95% 54%,98% 67%,88% 76%,83% 89%,69% 91%,58% 100%,46% 95%,32% 98%,24% 87%,11% 82%,9% 68%,0% 57%,5% 44%,2% 31%,13% 23%,18% 10%,32% 9%,41% 1%)}
+.drink-item:nth-child(even) .card::before{background:var(--brand-red)}
+.drink-item .story-info,.drink-item:nth-child(even) .story-info{border-color:#ffffff20}
+.drink-item .story-description{opacity:1}.drink-item .story-kicker{opacity:.8}
+.drink-item .drink-shop:hover{background:#fff8ed;color:var(--brand-red);border-color:#fff8ed}
+.drink-info-cue{opacity:1;background:#ffffff0a}
+.brand-statement.dean-office{display:grid;grid-template-columns:.8fr 1.2fr;gap:5%;min-height:0;padding:85px 6% 0;background:var(--brand-green) url('assets/finders-pattern.svg') repeat;background-size:200px 180px;color:#fff4d9;border:0;align-items:center}
+.dean-heading{padding-bottom:80px}.dean-heading>p{font:11px 'Courier New',monospace;letter-spacing:.15em;margin:0 0 30px}
+.dean-office .dean-heading h2{font-family:Georgia,serif;font-weight:400;font-size:clamp(48px,5.8vw,88px);white-space:normal;text-align:left;letter-spacing:-.05em;line-height:1.05}
+.dean-office .dean-heading h2 em{font-style:italic;color:#f2d5b0}
+.dean-heading>span{display:block;font-size:14px;line-height:1.7;margin-top:28px;max-width:270px}
+.typewriter-scene{position:relative;max-width:720px;width:100%;justify-self:center;padding-top:0}
+.dean-letter{position:relative;z-index:1;width:65%;margin:0 auto -8%;padding:26px 28px 48px;background:#f2d9a8;color:#30241b;box-shadow:0 2px 18px #14392d30;font:clamp(12px,1.05vw,16px)/1.45 'Courier New',monospace;transform:rotate(-1deg)}
+.letter-office{text-align:right;font-size:8px;line-height:1.2;padding-bottom:10px;border-bottom:1px solid #78573370;margin-bottom:20px}.dean-letter p{margin:0 0 15px}.dean-letter .dean-signature{margin-bottom:0;font-weight:bold}
+.dean-typewriter{position:relative;z-index:2;display:block;width:100%;height:auto}
+.typewriter-name{position:absolute;z-index:3;bottom:33%;left:24%;width:64%;text-align:center;color:#f8e3b9;font:bold clamp(12px,1.7vw,23px) 'Courier New',monospace;letter-spacing:.02em;pointer-events:none}
+@media(max-width:800px){header.brand-header,.hero,.drink-item:nth-child(n),.brand-statement.dean-office{background-size:160px 144px}.brand-statement.dean-office{grid-template-columns:1fr;padding:50px 5% 0;gap:30px}.dean-heading{padding:0;text-align:center}.dean-heading>p{margin-bottom:15px}.dean-office .dean-heading h2{text-align:center;font-size:48px}.dean-heading>span{margin:18px auto 0;max-width:none;font-size:12px}.typewriter-scene{max-width:540px}.dean-letter{font-size:13px;padding:24px 24px 42px;width:68%}.typewriter-name{font-size:18px}.drink-item .card::before{inset:22% 3%}}
+@media(max-width:480px){.dean-office .dean-heading h2{font-size:39px}.dean-letter{width:78%;font-size:12px;padding:20px 20px 38px;margin-bottom:-10%}.typewriter-name{font-size:12px}.letter-office{font-size:7px}.dean-letter p{margin-bottom:13px}.brand-statement.dean-office{gap:27px}.drink-item .card::before{inset:23% 1%}}
+.dean-typewriter{clip-path:polygon(2% 29%,4% 24%,17% 12%,21% 11%,21% 5%,25% 4%,26% 2%,27% 7%,31% 7%,31% 4%,73% 4%,74% 7%,77% 7%,77% 2%,79% 4%,80% 6%,83% 7%,84% 14%,90% 14%,92% 17%,92% 23%,89% 27%,86% 27%,89% 52%,93% 83%,92% 91%,90% 96%,87% 97%,84% 94%,16% 94%,13% 97%,11% 95%,10% 88%,11% 75%,15% 40%,16% 26%,15% 25%,15% 18%,5% 27%,4% 33%,2% 34%)}
+.typewriter-name{bottom:34.5%}
+.typewriter-machine{position:relative;z-index:2}.typewriter-name{top:44%;bottom:auto;left:24%;width:62%;font-size:clamp(11px,1.45vw,20px)}@media(max-width:800px){.typewriter-name{font-size:clamp(10px,3vw,17px)}}
